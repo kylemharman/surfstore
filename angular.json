@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "surfstore"
+    }
+  },
+  "defaultProject": "surfstore",
+  "cli": {
+    "analytics": false
+  }
 }
