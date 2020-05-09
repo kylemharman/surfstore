@@ -1,0 +1,79 @@
+// Fonts
+@import "https://fonts.googleapis.com/css?family=Material+Icons";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,800");
+
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$primary: mat-palette($mat-blue, A700);
+$accent: mat-palette($mat-deep-purple, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theme);
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+
+$custom-typography: (
+  display-4: mat-typography-level(112px, 112px, 800, "Montserrat", -0.0134em),
+  display-3: mat-typography-level(56px, 56px, 800, "Montserrat", -0.0089em),
+  display-2: mat-typography-level(45px, 48px, 800, "Montserrat", 0em),
+  display-1: mat-typography-level(34px, 40px, 800, "Montserrat", 0.0074em),
+  headline: mat-typography-level(24px, 32px, 800, "Montserrat", 0em),
+  title: mat-typography-level(20px, 32px, 800, "Montserrat", 0.0075em),
+  subheading-2: mat-typography-level(16px, 28px, 300, "Montserrat", 0.0094em),
+  subheading-1: mat-typography-level(15px, 24px, 300, "Montserrat", 0.0067em),
+  body-2: mat-typography-level(14px, 24px, 800, "Montserrat", 0.0179em),
+  body-1: mat-typography-level(14px, 20px, 300, "Montserrat", 0.0179em),
+  button: mat-typography-level(14px, 14px, 400, "Montserrat", 0.0893em),
+  caption: mat-typography-level(12px, 20px, 300, "Montserrat", 0.0333em),
+  input: mat-typography-level(inherit, 1.125, 300, "Montserrat", 1.5px),
+);
+
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+
+// Handle buttons appropriately, with respect to line-height
+.mat-raised-button,
+.mat-stroked-button,
+.mat-flat-button {
+  padding: 0 1.15em;
+  margin: 0 0.65em;
+  min-width: 3em;
+  line-height: 36.4px;
+}
+
+.mat-standard-chip {
+  padding: 0.5em 0.85em;
+  min-height: 2.5em;
+}
+
+.material-icons {
+  font-size: 24px;
+  font-family: "Material Icons", "Material Icons";
+  .mat-badge-content {
+    font-family: "Montserrat";
+  }
+}

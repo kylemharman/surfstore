@@ -1,1 +1,17 @@
-<p>navbar works!</p>
+<header>
+  <nav class="navbar" fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+      <a color="primary" [routerLink]="['/']" class="mat-body-strong"
+        >Surf Shapes</a
+      >
+    </div>
+    <div>
+      <a [routerLink]="['/login']" routerLinkActive="router-link-active"
+        >Login</a
+      >
+      <a [routerLink]="['/sign-up']" routerLinkActive="router-link-active"
+        >Sign Up</a
+      >
+    </div>
+  </nav>
+</header>
